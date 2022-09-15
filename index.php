@@ -4,13 +4,20 @@
 
 <body>
 
+<!-- コメントです。 -->
 こちらはHTMLです。
-
+<br>
 <?php 
   echo ("こちらはPHPです。");
 
-  phpinfo();
-  
+  echo "<br>";
+
+  echo "PHP";
+
+  echo "<br>";
+
+  echo 123;
+
 ?>
 
 </body>
