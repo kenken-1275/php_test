@@ -10,6 +10,7 @@
   echo ("こちらはPHPです。");
 
   phpinfo();
+  
 ?>
 
 </body>
