@@ -34,4 +34,23 @@ if($signal === "red"){
   echo "進む";
 }
 
+echo "<br>";
+
+$test = "1";
+
+if(!empty($test)){
+  echo "変数は空ではありません";
+}
+
+echo "<br>";
+
+// 三項演算子
+// 条件 ? 真：偽
+
+$math = 80;
+
+$comment = $math > 80 ? "good" : "not good";
+
+echo $comment;
+
 ?>
