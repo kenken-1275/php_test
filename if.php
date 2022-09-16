@@ -18,4 +18,20 @@ if($height === "90"){
 
 // == 一致
 // === 型まで一致
+
+echo "<br>";
+
+
+// else,elseif
+
+$signal = "yellow";
+
+if($signal === "red"){
+  echo "止まれ";
+}elseif($signal=="yellow"){
+  echo "一旦停止";
+}else{
+  echo "進む";
+}
+
 ?>
