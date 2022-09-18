@@ -15,6 +15,8 @@ echo "<br>";
 
 echo mb_strlen($jap_text);
 
+echo "<br>";
+
 
 // 文字列の置換
 
@@ -43,4 +45,15 @@ echo substr("abcde", 2);
 echo "<br>";
 
 echo mb_substr("あいうえお",2);
+
+// 配列に配列を追加する
+echo "<br>";
+
+$array = ["りんご","みかん"];
+
+array_push($array,"ぶどう","なし");
+
+echo "<pre>";
+var_dump($array);
+echo "</pre>";
 ?>
