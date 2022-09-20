@@ -4,6 +4,8 @@ header("X-FRAME-OPTIONS:DENY");
 
 session_start();
 
+require "validation.php";
+
 // スーパーグローバル変数 phpでは9種類ある。フォームに入力した内容を連想配列にする。またアドレスに入力した内容が反映される。
 // method"POST"でも同じように連想配列になるが、アドレスに入力内容が表示されなくなる。パスワードとか表示したくない場合はPOSTが良い。
 if(!empty($_POST)){
@@ -20,13 +22,14 @@ function h($str){
 // ①３つのファイルを用意する。
 // ②1つのファイル内に、変数を用意して分岐させる。
 $page_flag = 0;
+$errors = validation($_POST);
 
 // echo "<pre>";
 // var_dump($_POST);
 // echo "</pre>";
 
 
-if(!empty($_POST["btn_confirm"])){
+if(!empty($_POST["btn_confirm"]) && empty($errors)){
   $page_flag = 1;
 }
 
@@ -51,6 +54,17 @@ if(!empty($_POST["btn_submit"])){
     }
     $token = $_SESSION["csrf_token"];
   ?>
+
+  <?php
+    if(!empty($errors) && !empty($_POST["btn_confirm"])) : ?>
+    <?php echo "<ul>"; ?>
+    <?php 
+      foreach($errors as $error){
+        echo "<li>" . $error . "</li>";
+      }
+    ?>
+    <?php echo "</ul>"; ?>
+    <?php endif; ?>
   入力画面
   <form method="POST" action="input.php">
     氏名
