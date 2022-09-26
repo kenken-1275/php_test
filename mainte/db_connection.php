@@ -2,7 +2,7 @@
 
 const DB_HOST = "mysql:dbname=udemy_php;host=localhost;charset=utf8";
 const DB_USER = "php_user2";
-const DB_PASSWORD = "";
+const DB_PASSWORD = "password123";
 
 // 例外処理 Exception
 try{
