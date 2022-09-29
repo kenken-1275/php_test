@@ -13,5 +13,10 @@ $app->run(); //TestControllerを継承していることで、メソッドも使
 // getTextメソッドで、return $this->textを指定しているので、戻り値が上記プロパティとなる。
 // runメソッドのechoによって、上記プロパティが出力される。
 
+echo "<br>";
+
+use Carbon\Carbon;
+
+echo Carbon::now()->format("今年はY年m月d日だよ!");
 
 ?>
